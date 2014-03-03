@@ -5,6 +5,7 @@ body{
   margin: 0px;
   background-color:#444;
   font-size: 18px;
+  position: relative;
 }
 body, a:link, a:visited, a:active{
   color: lightblue;
@@ -24,4 +25,33 @@ body, a:link, a:visited, a:active{
   border:10px solid red;
   border-radius:10px;
   position:absolute;
+}
+.dancerOne {
+  border:none;
+  background-image: url(http://i.dailymail.co.uk/i/pix/2013/07/09/article-2358763-1870B4EA000005DC-85_634x727.jpg);
+  background-size: 210px 240px;
+  border-radius: 210px 240px;
+  height: 240px;
+  width: 170px;
+  background-repeat: no-repeat;
+}
+
+#dancefloor {
+  position: absolute;
+  bottom: 10%;
+  width: 100%;
+  height: 250px;
+  background-color: rgba(255,255,255,0.1);
+}
+
+#stage {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-image: url(http://crazyaboutpie.files.wordpress.com/2014/01/stage-left.gif);
+  position: relative;
+  margin: 0 auto;
+  height: 900px;
+  width: 1200px;
+  overflow: hidden;
 }
