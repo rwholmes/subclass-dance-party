@@ -1,3 +1,6 @@
+/* global $, window, console */
+/* exported window, console, $ */
+
 $(document).ready(function(){
   window.dancers = [];
 
@@ -39,14 +42,23 @@ $(document).ready(function(){
   });
 
 // Hover toggle on moonwalker
-window.stopWalk = function () {
   $(".moonwalker").on("mouseover", function(){
     $(this).stop().addClass('vogue');
   });
   $('.moonwalker').on("mouseout", function() {
     $(this).removeClass('vogue');
   });
-};
+
+  $('.piano-button').on('click', function(event){
+    event.preventDefault();
+    for (var i=0; i<window.dancers.length; i++){
+      if (window.dancers[i].$node[0].classList.contains('tinyDancer')){
+        $(this).toggle();
+        window.dancers[i].goToPiano();
+        return;
+      }
+    }
+  });
 
 });
 

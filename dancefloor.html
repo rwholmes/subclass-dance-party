@@ -6,18 +6,24 @@
     <script src="lib/jquery.js"></script>
     <script src="src/dancer.js"></script>
     <script src="src/blinkyDancer.js"></script>
+    <script src="src/tinyDancer.js"></script>
+    <script src="src/eagle.js"></script>
+    <script src="src/moonwalker.js"></script>
+    <script src="src/piano.js"></script>
   </head>
   <body>
     <div class="topbar">
       <span class="title">object dance party</span>
-      <a href="#" class="addDancerButton" data-dancer-maker-function-name="BlinkyDancer">add a blinky dancer</a>
+      <a href="#" class="addDancerButton" data-dancer-maker-function-name="Eagle">add an Eagle</a>
       <a href="#" class="addDancerButton" data-dancer-maker-function-name="TinyDancer">add a Tiny Dancer</a>
-      <a href="#" class="addDancerButton" data-dancer-maker-function-name="FlyingSpears">add a Flying Spears</a>
+      <a href="#" class="addDancerButton" data-dancer-maker-function-name="Piano">add a Piano</a>
       <a href="#" class="addDancerButton" data-dancer-maker-function-name="Moonwalker">add a Moonwalker</a>
-      <a href="#" class="lineUpButton">add a Flying Spears</a>
+      <a href="#" class="lineUpButton">Line Up</a>
     </div>
     <div id="stage">
-      <div id="dancefloor"> </div>
+      <div id="dancefloor">
+        <a class="piano-button" href="#">Play Piano</a>
+      </div>
     </div>
     <script src="src/init.js"></script>
   </body>

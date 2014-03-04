@@ -21,67 +21,6 @@ BlinkyDancer.prototype.step = function(){
 };
 
 
-var TinyDancer = function(top, left, timeBetweenSteps) {
-  Dancer.call(this, 550, left, 3000);
-  this.$node.addClass('tinyDancer');
-};
-TinyDancer.prototype = Object.create(Dancer.prototype);
-TinyDancer.prototype.constructor  = TinyDancer;
-
-TinyDancer.prototype.step = function() {
-  Dancer.prototype.step.call(this);
-  var that = this.$node;
-  this.$node.animate({left: '30%'},2000);
-  setTimeout(function() {
-    $(".tinyDancer").animate({left: '50%'}, 800);
-  }, 3000);
-
-};
-
-var FlyingSpears = function(top, left, timeBetweenSteps) {
-  Dancer.call(this, 0, left, 3000);
-  this.$node.addClass('flyingSpears');
-};
-FlyingSpears.prototype = Object.create(Dancer.prototype);
-FlyingSpears.prototype.constructor  = FlyingSpears;
-
-FlyingSpears.prototype.step = function() {
-  Dancer.prototype.step.call(this);
-  this.$node.animate({left: '30%'},2000);
-  setTimeout(function() {
-    $(".flyingSpears").animate({left: '50%'}, 800);
-  }, 3000);
-
-};
-
-var Moonwalker = function(top, left, timeBetweenSteps) {
-  Dancer.call(this, 650, left, 2300);
-  this.$node.addClass('moonwalker');
-  this.stepCount = 0;
-  window.stopWalk();
-};
-Moonwalker.prototype = Object.create(Dancer.prototype);
-Moonwalker.prototype.constructor  = Moonwalker;
-
-Moonwalker.prototype.step = function() {
-  this.stepCount++;
-  console.log(this.stepCount);
-  Dancer.prototype.step.call(this);
-  if(this.stepCount%2 !== 0) {
-    this.$node.addClass('walk-left').removeClass('walk-right');
-    this.$node.animate({left:'1000px'}, 2300);
-  } else {
-    this.$node.addClass('walk-right').removeClass('walk-left');
-    this.$node.animate({left:'100px'}, 2300);
-  }
-};
-
-
-// .walk-right
-// .walk-left
-// keyframes for walking
-// setTimeout that changes class at either side of the stage
-// translate/animation function that matches up with setTimeout and keyframes
 
 
 
