@@ -22,13 +22,3 @@ BlinkyDancer.prototype.step = function(){
 
 
 
-
-
-
-
-
-
-
-
-
-
