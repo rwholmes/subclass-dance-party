@@ -1,3 +1,4 @@
+/* exported Dancer, top, left, timeBetweenSteps */
 var BlinkyDancer = function(top, left, timeBetweenSteps){
   Dancer.apply(this, arguments);
   // we plan to overwrite the step function below, but we still want the superclass step behavior to work,
@@ -29,7 +30,7 @@ TinyDancer.prototype.constructor  = TinyDancer;
 
 TinyDancer.prototype.step = function() {
   Dancer.prototype.step.call(this);
-  that = this.$node;
+  var that = this.$node;
   this.$node.animate({left: '30%'},2000);
   setTimeout(function() {
     $(".tinyDancer").animate({left: '50%'}, 800);
@@ -46,13 +47,46 @@ FlyingSpears.prototype.constructor  = FlyingSpears;
 
 FlyingSpears.prototype.step = function() {
   Dancer.prototype.step.call(this);
-  that = this.$node;
   this.$node.animate({left: '30%'},2000);
   setTimeout(function() {
     $(".flyingSpears").animate({left: '50%'}, 800);
   }, 3000);
 
 };
+
+var Moonwalker = function(top, left, timeBetweenSteps) {
+  Dancer.call(this, 680, left, 2300);
+  this.$node.addClass('moonwalker');
+  this.stepCount = 0;
+};
+Moonwalker.prototype = Object.create(Dancer.prototype);
+Moonwalker.prototype.constructor  = Moonwalker;
+
+Moonwalker.prototype.step = function() {
+  this.stepCount++;
+  console.log(this.stepCount);
+  Dancer.prototype.step.call(this);
+  if(this.stepCount%2 !== 0) {
+    this.$node.addClass('walk-left').removeClass('walk-right');
+    this.$node.animate({left:'1100px'}, 2300);
+  } else {
+    this.$node.addClass('walk-right').removeClass('walk-left');
+    this.$node.animate({left:'200px'}, 2300);
+  }
+};
+
+
+// .walk-right
+// .walk-left
+// keyframes for walking
+// setTimeout that changes class at either side of the stage
+// translate/animation function that matches up with setTimeout and keyframes
+
+
+
+
+
+
 
 
 

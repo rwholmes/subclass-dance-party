@@ -23,18 +23,20 @@ $(document).ready(function(){
     // make a dancer with a random position
 
     var top = $("#stage").height() * Math.random();
-    var left = $("#stage").width() * Math.random();
+    var left = $("#stage").width() * Math.random() + (($("body").width - $("#stage".width))/2);
     var timeBetweenSteps = Math.random() * 2000;
 
     var dancer = new dancerMakerFunction(top, left, timeBetweenSteps);
+    window.dancers.push(dancer);
     $('body').append(dancer.$node);
   });
 });
 
 $(".lineUpButton").on("click", function(event){
-  var dancers = $('.dancer');
-  for(var i=0; i<dancers.length; i++){
-    dancers[i].lineUp();
+  for(var i=0; i<window.dancers.length; i++){
+    window.dancers[i].lineup();
   }
 });
+
+
 

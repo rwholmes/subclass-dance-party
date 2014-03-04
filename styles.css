@@ -66,4 +66,31 @@ body, a:link, a:visited, a:active{
   overflow: hidden;
 }
 
+/* Walking Styles */
+.moonwalker {
+  border: none;
+  height: 148px;
+  width: 100px;
+  border-radius: 0;
+}
 
+.walk-right {
+  background-image: url(src/walk-right.png);
+  -webkit-animation: walk .9s steps(6) infinite;
+  animation: walk .9s steps(6) infinite;
+}
+
+.walk-left {
+  background-image: url(src/walk-left.png);
+  -webkit-animation: walk .9s steps(6) infinite;
+  animation: walk .9s steps(6) infinite;
+}
+
+@-webkit-keyframes walk {
+  from { background-position: 0px; }
+  to { background-position: -612px; }
+}
+@-keyframes walk {
+  from { background-position: 0px; }
+  to { background-position: -612px; }
+}
