@@ -28,15 +28,29 @@ $(document).ready(function(){
 
     var dancer = new dancerMakerFunction(top, left, timeBetweenSteps);
     window.dancers.push(dancer);
-    $('body').append(dancer.$node);
+    $('#stage').append(dancer.$node);
   });
+
+// Line-up button
+  $(".lineUpButton").on("click", function(event){
+    for(var i=0; i<window.dancers.length; i++){
+      window.dancers[i].lineup();
+    };
+  });
+
+// Hover toggle on moonwalker
+window.stopWalk = function () {
+  $(".moonwalker").on("mouseover", function(){
+    $(this).stop().addClass('vogue');
+  });
+  $('.moonwalker').on("mouseout", function() {
+    $(this).removeClass('vogue');
+  });
+};
+
 });
 
-$(".lineUpButton").on("click", function(event){
-  for(var i=0; i<window.dancers.length; i++){
-    window.dancers[i].lineup();
-  }
-});
+
 
 
 

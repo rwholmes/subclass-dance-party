@@ -39,7 +39,7 @@ TinyDancer.prototype.step = function() {
 };
 
 var FlyingSpears = function(top, left, timeBetweenSteps) {
-  Dancer.call(this, 32, left, 3000);
+  Dancer.call(this, 0, left, 3000);
   this.$node.addClass('flyingSpears');
 };
 FlyingSpears.prototype = Object.create(Dancer.prototype);
@@ -55,9 +55,10 @@ FlyingSpears.prototype.step = function() {
 };
 
 var Moonwalker = function(top, left, timeBetweenSteps) {
-  Dancer.call(this, 680, left, 2300);
+  Dancer.call(this, 650, left, 2300);
   this.$node.addClass('moonwalker');
   this.stepCount = 0;
+  window.stopWalk();
 };
 Moonwalker.prototype = Object.create(Dancer.prototype);
 Moonwalker.prototype.constructor  = Moonwalker;
@@ -68,10 +69,10 @@ Moonwalker.prototype.step = function() {
   Dancer.prototype.step.call(this);
   if(this.stepCount%2 !== 0) {
     this.$node.addClass('walk-left').removeClass('walk-right');
-    this.$node.animate({left:'1100px'}, 2300);
+    this.$node.animate({left:'1000px'}, 2300);
   } else {
     this.$node.addClass('walk-right').removeClass('walk-left');
-    this.$node.animate({left:'200px'}, 2300);
+    this.$node.animate({left:'100px'}, 2300);
   }
 };
 

@@ -70,8 +70,16 @@ body, a:link, a:visited, a:active{
 .moonwalker {
   border: none;
   height: 148px;
-  width: 100px;
+  width: 105px;
   border-radius: 0;
+  background-repeat: no-repeat;
+  /*background-position: ;*/
+}
+
+.vogue {
+  -webkit-animation: none !important;
+  animation: none !important;
+  background-position: -306px;
 }
 
 .walk-right {
