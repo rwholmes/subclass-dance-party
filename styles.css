@@ -26,7 +26,7 @@ body, a:link, a:visited, a:active{
   border-radius:10px;
   position:absolute;
 }
-.dancerOne {
+.tinyDancer {
   border:none;
   background-image: url(http://i.dailymail.co.uk/i/pix/2013/07/09/article-2358763-1870B4EA000005DC-85_634x727.jpg);
   background-size: 210px 240px;
@@ -34,6 +34,17 @@ body, a:link, a:visited, a:active{
   height: 240px;
   width: 170px;
   background-repeat: no-repeat;
+  margin-left:10%;
+}
+
+.flyingSpears {
+  border:none;
+  background-image: url(http://danaeph.files.wordpress.com/2012/01/britney-spears-femme-fatale-tour-celebrity-gossip-31.jpg);
+  background-size: 324px 178px;
+  height: 178px;
+  width: 324px;
+  background-repeat: no-repeat;
+  margin-left:10%;
 }
 
 #dancefloor {
@@ -41,7 +52,6 @@ body, a:link, a:visited, a:active{
   bottom: 10%;
   width: 100%;
   height: 250px;
-  background-color: rgba(255,255,255,0.1);
 }
 
 #stage {
@@ -55,3 +65,5 @@ body, a:link, a:visited, a:active{
   width: 1200px;
   overflow: hidden;
 }
+
+

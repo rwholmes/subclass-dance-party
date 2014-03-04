@@ -16,19 +16,45 @@ BlinkyDancer.prototype.step = function(){
   // See http://api.jquery.com/category/effects/ for this and
   // other effects you can use on a jQuery-wrapped html tag.
   // this.$node.toggle();
-  this.$node.animate({left: '70%'},3000);
+  this.$node.toggle();
 };
 
-var DancerOne = function(top, left, timeBetweenSteps) {
-  BlinkyDancer.call(this, 550, left, 3000);
-  this.$node.addClass('dancerOne');
-};
 
-DancerOne.prototype.step = function() {
+var TinyDancer = function(top, left, timeBetweenSteps) {
+  Dancer.call(this, 550, left, 3000);
+  this.$node.addClass('tinyDancer');
+};
+TinyDancer.prototype = Object.create(Dancer.prototype);
+TinyDancer.prototype.constructor  = TinyDancer;
+
+TinyDancer.prototype.step = function() {
   Dancer.prototype.step.call(this);
-  this.$node.animate({left: '70%'},3000);
+  that = this.$node;
+  this.$node.animate({left: '30%'},2000);
+  setTimeout(function() {
+    $(".tinyDancer").animate({left: '50%'}, 800);
+  }, 3000);
 
 };
 
-DancerOne.prototype = Object.create(BlinkyDancer.prototype);
-DancerOne.prototype.constructor  = DancerOne;
+var FlyingSpears = function(top, left, timeBetweenSteps) {
+  Dancer.call(this, 32, left, 3000);
+  this.$node.addClass('flyingSpears');
+};
+FlyingSpears.prototype = Object.create(Dancer.prototype);
+FlyingSpears.prototype.constructor  = FlyingSpears;
+
+FlyingSpears.prototype.step = function() {
+  Dancer.prototype.step.call(this);
+  that = this.$node;
+  this.$node.animate({left: '30%'},2000);
+  setTimeout(function() {
+    $(".flyingSpears").animate({left: '50%'}, 800);
+  }, 3000);
+
+};
+
+
+
+
+

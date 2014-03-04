@@ -26,9 +26,15 @@ $(document).ready(function(){
     var left = $("#stage").width() * Math.random();
     var timeBetweenSteps = Math.random() * 2000;
 
-
     var dancer = new dancerMakerFunction(top, left, timeBetweenSteps);
     $('body').append(dancer.$node);
   });
+});
+
+$(".lineUpButton").on("click", function(event){
+  var dancers = $('.dancer');
+  for(var i=0; i<dancers.length; i++){
+    dancers[i].lineUp();
+  }
 });
 
