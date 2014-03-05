@@ -12,20 +12,26 @@ Eagle.prototype.step = function() {
   this.$node.animate({left: '30%'},2000);
   //console.log(count);
   console.log(this.$node.stepCounter);
-  if ((this.$node.stepCounter === 0) || (this.$node.stepCounter === 2) || (this.$node.stepCounter === 4)){
+  if ((this.$node.stepCounter === 0) || (this.$node.stepCounter === 2)){
     // fly right
     this.$node.addClass('fly-right').removeClass('fly-left');
+    window.birdsOfPrey.push(this.$node[0]);
   }
   else if ((this.$node.stepCounter === 1) || (this.$node.stepCounter === 3)){
     this.$node.removeClass('fly-right').addClass('fly-left');
   }
-  else if ((this.$node.stepCounter === 5)) {
-    // fly down
+  else if ((this.$node.stepCounter === 4)) {
+    this.$node.removeClass('fly-left').addClass('fly-down');
+    console.log(window.birdsOfPrey);
   }
-  else if ((this.$node.stepCounter === 6)) {
-    // fly up
+  else if ((this.$node.stepCounter === 5)) {
+    this.$node.removeClass('fly-down').addClass('fly-up');
+  } else if (this.$node.stepCounter > 5) {
+    this.$node.remove();
   }
   //count++;
   this.$node.stepCounter++;
 };
+
+
 

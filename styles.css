@@ -158,10 +158,10 @@ body, a:link, a:visited, a:active{
   -webkit-animation: flyright 2s linear infinite;
 }
 .fly-up {
-
+  -webkit-animation: flyup 2s linear infinite;
 }
 .fly-down {
-
+  -webkit-animation: flydown 2s linear infinite;
 }
 
 @-webkit-keyframes flyright {
@@ -209,7 +209,50 @@ body, a:link, a:visited, a:active{
     left: 10px;
   }
 }
-
+@-webkit-keyframes flydown {
+  0% {
+    top: 90px;
+    left: 10px;
+  }
+  25% {
+    top: 300px;
+    left: 130px;
+  }
+  50% {
+    top: 500px;
+    left: 225px;
+  }
+  75% {
+    top: 530px;
+    left: 370px;
+  }
+  100% {
+    top: 540px;
+    left: 500px;
+  }
+}
+@-webkit-keyframes flyup {
+  0% {
+    top: 540px;
+    left: 500px;
+  }
+  25% {
+    top: 480px;
+    left: 600px;
+  }
+  50% {
+    top: 390px;
+    left: 750px;
+  }
+  75% {
+    top: 200px;
+    left: 875px;
+  }
+  100% {
+    top: -50px;
+    left: 1300px;
+  }
+}
 
 
 
