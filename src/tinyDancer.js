@@ -5,19 +5,19 @@ var TinyDancer = function(top, left, timeBetweenSteps) {
   this.$node.addClass('tinyDancer');
   this.$node.pianoFlag = false;
 };
+
 TinyDancer.prototype = Object.create(Dancer.prototype);
 TinyDancer.prototype.constructor  = TinyDancer;
 
 TinyDancer.prototype.step = function() {
   Dancer.prototype.step.call(this);
-  var that = this.$node;
   if (!this.$node.pianoFlag){
     this.$node.animate({left: '30%'},2000);
     setTimeout(function() {
       $(".tinyDancer").animate({left: '50%'}, 800);
     }, 3000);
   } else {
-    this.$node.animate({left: '60%'});
+    this.$node.animate({left: '70%'});
     this.$node.addClass('dancing');
   }
 };

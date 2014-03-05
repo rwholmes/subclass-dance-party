@@ -3,7 +3,6 @@
 
 $(document).ready(function(){
   window.dancers = [];
-  window.birdsOfPrey = [];
 
   $(".addDancerButton").on("click", function(event){
     /* This function sets up the click handlers for the create-dancer
@@ -25,9 +24,8 @@ $(document).ready(function(){
     var dancerMakerFunction = window[dancerMakerFunctionName];
 
     // make a dancer with a random position
-
     var top = $("#stage").height() * Math.random();
-    var left = $("#stage").width() * Math.random() + (($("body").width - $("#stage".width))/2);
+    var left = $("#stage").width() * Math.random();
     var timeBetweenSteps = Math.random() * 2000;
 
     var dancer = new dancerMakerFunction(top, left, timeBetweenSteps);
@@ -44,10 +42,7 @@ $(document).ready(function(){
 
 // Hover toggle on moonwalker
   $(".moonwalker").on("mouseover", function(){
-    $(this).stop().addClass('vogue');
-  });
-  $('.moonwalker').on("mouseout", function() {
-    $(this).removeClass('vogue');
+    $(this).stop();
   });
 
   $('.piano-button').on('click', function(event){

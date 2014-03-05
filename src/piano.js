@@ -9,5 +9,4 @@ Piano.prototype.constructor  = Piano;
 Piano.prototype.step = function() {
   Dancer.prototype.step.call(this);
   this.$node.animate({top: '650px', left: '70%'},2000);
-
 };
